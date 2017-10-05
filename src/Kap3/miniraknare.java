@@ -14,5 +14,6 @@ class miniraknare{
         i3= i1+Integer.parseInt(s2)+i2;
         
         JOptionPane.showMessageDialog(null, i3);
+        
     }
 }

@@ -34,6 +34,7 @@ class Variabler{
         
         JOptionPane.showMessageDialog(null, d1+d2);
         
+        
     }
 }
         
