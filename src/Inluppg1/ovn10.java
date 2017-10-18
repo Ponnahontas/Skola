@@ -4,24 +4,36 @@ import javax.swing.*;
 
 class ovn10{
     public static void main(String [] args){
-        String s1, s2;
-        char c1, c2;
-        int i1, i2;
+        String s1, s2, s3;
+        int stegint, i1, i2,i3, i4;
+        char c1;
+        s3="";
         
         s1=JOptionPane.showInputDialog("Mata in ett tecken som ska förskjutas(ej å,ä eller ö)!");
-      if (s1.equals("Z")){
-          s2="A";
-      }else if(s1.equals("z")){
-          s2="a";
-      }else{
-        c1=s1.charAt(0);
-        i1=(int)c1;
-        i2=i1+1;
-        c2=(char)i2;
-        s2=String.valueOf(c2);
-      }
-      
+        stegint=1;
         
-                JOptionPane.showMessageDialog(null,s1+" förskjutet ett steg blir "+s2+"!");
+     
+        for(i3=0; i3<s1.length();i3++){
+          
+            i4=(int)(s1.charAt(i3));
+            c1=(char)(int)(s1.charAt(i3));  
+          
+          if(i4>90){
+                
+              if((int)(s1.charAt(i3) + stegint)>122){
+                    stegint=stegint-26;
+                } 
+            }
+                else{
+                  
+                    if((int)(s1.charAt(i3) + stegint)>90){
+                    stegint=stegint-26;
+                    }
+                }   
+        s3 = s3 + Character.toString((char)(int)(s1.charAt(i3) + stegint));
+        
+        }
+        
+        JOptionPane.showMessageDialog(null,s1+" förskjutet ett steg blir "+s3);
     }
 }
